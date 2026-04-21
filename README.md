@@ -1,4 +1,5 @@
 # QR Gen
+live on: https://nlarchive.github.io/qr-gen/
 
 Generador de códigos QR nativo usando HTML, CSS y JavaScript. El proyecto funciona totalmente en el cliente y acepta un logo central opcional.
 
