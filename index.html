@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generador QR con Logo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="panel">
+      <h1>Generador QR con Logo</h1>
+      <p>Genera un QR local en el navegador y agrega un logo en el centro.</p>
+      <div class="field-group">
+        <label for="content">Texto o URL</label>
+        <input id="content" type="text" value="https://www.bardetodos.es/" placeholder="https://ejemplo.com" />
+      </div>
+      <div class="field-group">
+        <label for="logo-input">Logo (PNG / JPG / SVG)</label>
+        <input id="logo-input" type="file" accept="image/png,image/jpeg,image/svg+xml" />
+      </div>
+      <div class="field-group logo-section">
+        <div>
+          <label>Logo actual</label>
+          <img id="logo-preview" src="logo.png" alt="Logo preview" />
+        </div>
+      </div>
+      <div class="field-group range-group">
+        <label for="size">Tamaño: <span id="size-label">512</span>px</label>
+        <input id="size" type="range" min="200" max="900" step="50" value="512" />
+      </div>
+      <div class="field-group colors">
+        <label>
+          Color QR
+          <input id="dark-color" type="color" value="#000000" />
+        </label>
+        <label>
+          Fondo
+          <input id="light-color" type="color" value="#ffffff" />
+        </label>
+      </div>
+      <div class="actions">
+        <button id="generate" type="button">Generar QR</button>
+        <button id="download" type="button">Descargar PNG</button>
+        <button id="example" type="button">Ejemplo Bardetodos</button>
+      </div>
+    </section>
+    <section class="preview-panel">
+      <h2>Vista previa</h2>
+      <div class="canvas-wrapper">
+        <canvas id="qr-canvas" width="512" height="512" aria-label="Vista previa del código QR"></canvas>
+      </div>
+      <p class="note">Si cargas un logo, el QR se vuelve más personal. El logo se coloca en el centro con borde blanco para mejor lectura.</p>
+    </section>
+  </main>
+  <script src="qrcode-lib.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
